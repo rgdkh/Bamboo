@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <title>بامبو - قريباً الإطلاق</title>
+    <style>
+ 
+       body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f4dc;
+    color: #22263e;
+   
+    scroll-behavior: smooth;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Reduced padding */
+    background-color: #f2f4dc;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+   
+}
+
+header img {
+    max-height: 100px; /* Slightly smaller logo */
+    width: auto;
+}
+
+nav {
+    display: flex;
+    gap: 15px; /* Reduced gap between links */
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px; /* Slightly smaller font */
+    padding: 6px 10px; /* Reduced padding inside links */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #48642b;
+    color: white;
+    border-radius: 5px;
+}
+
+section {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 30px;
+    color: #5e7e39;
+    font-weight: bold;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.services-container div {
+    text-align: center;
+    max-width: 300px;
+ 
+}
+
+.services-container img {
+    max-width: 300px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.services-container h3 {
+    font-size: 20px;
+    color: #5e7e39;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.services-container p {
+    font-size: 16px;
+    line-height: 1.6;
+   
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #48642b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #6a7c47;
+    transform: scale(1.05);
+}
+
+.coming-soon {
+    background-color: #22263e;
+    color: white;
+    padding: 40px 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.email-form {
+    margin-top: 20px;
+}
+
+input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #48642b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #6a7c47;
+}
+
+footer {
+    background-color: #f2f4dc;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+    color: #48642b;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #6a7c47;
+    transform: scale(1.2);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-container img {
+        max-width: 80%;
+    }
+
+    input[type="email"], input[type="submit"] {
+        width: 100%;
+    }
+}
+/* Basic Keyframes Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Scale effect for images on hover */
+.services-container img {
+    transition: transform 0.5s ease;
+}
+
+.services-container img:hover {
+    transform: scale(1.3);
+}
+section#soon {
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Background image styling */
+.background-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Content styling */
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Fix for heading margins */
+.content h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 28px; /* Adjust as needed */
+    color:#f2f4dc;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.launching-soon-text {
+    position: absolute;
+    top: -30px; /* رفع النص لأعلى */
+    left: 20px; /* تقريب النص إلى اليسار */
+    font-size: 23px;
+    color: #c5a52d;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom right, #22263e, #22263e);
+    transform: rotate(-10deg);
+}
+
+/* تعديلات على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .launching-soon-text {
+        font-size: 18px;
+        top: -20px; /* تعديل الموضع للأعلى */
+        left: 15px; /* تقليل المسافة إلى اليسار */
+    }
+}
+
+@media (max-width: 480px) {
+    .launching-soon-text {
+        font-size: 16px;
+        top: -10px; /* ضبط الموضع للأعلى بشكل بسيط */
+        left: 10px;
+        padding: 8px 12px;
+    }
+}
+
+
+#about-us {
+    position: relative;
+    font-size: 20px; 
+}
+.responsive-text {
+    max-width: 750px; /* الحد الأقصى لعرض النص */
+    margin: 0 auto; /* التمركز */
+    line-height: 1.8; /* لتحسين المسافة بين السطور */
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .launching-soon-text {
+        font-size: 16px;
+        padding: 10px 15px;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .launching-soon-text {
+        font-size: 14px;
+        padding: 8px 12px;
+    
+    }
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* You can adjust this */
+    margin: 0 auto; /* Centering */
+    padding-top: 35%; /* 16:9 Aspect Ratio (can be adjusted) */
+}
+
+.video-container iframe, .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="C:\Users\Raghad\Downloads\bambologo.png" alt="شعار بامبو">
+        
+        <nav>
+            <a href="#contact">انضم إلينا</a>
+            <a href="#story">قصتنا</a>
+            <a href="#services">خدماتنا</a>
+            <a href="#about-us">من نحن</a>
+        </nav>
+    </header>
+    
+    
+<section id="soon">
+    <div class="background-image-container">
+        <img src="C:\Users\Raghad\OneDrive\Desktop\bamboo\images\back.jpg" alt="Background">
+    </div>
+    <div class="content">
+    <h2>Bamboo | بامبو</h2>
+   
+        <div>
+            <p>بامبو تأسست بهدف تحقيق قفزة نوعية في عالم الزراعة باستخدام التكنولوجيا الذكية</p>
+        </div>
+    </div>
+</section>
+<section id="about-us">
+    <h2 class="launching-soon-text">! الإطلاق قريبًا</h2>
+    <h2>من نحن؟</h2>
+    <p class="responsive-text">
+        نسعى إلى توفير حلول زراعية ذكية من خلال رشاشات ري تلقائية مدمجة بحساسات 
+           لتحليل التربة وقياس درجة الحرارة وشدة الضوء في المكان الزراعي 
+        ليوفر نظام متكامل لمراقبة العوامل البيئية ليسهل الزراعة والاعتناء بالنباتات
+    </p>
+</section>
+
+
+<section id="services">
+    <h2>مانقدمه لكم</h2>
+    <div class="services-container">
+        <div>
+            <img src="C:\Users\Raghad\OneDrive\Desktop\bamboo\images\19.png" alt="التطبيق الزراعي">
+            <h3>تطبيق بامبو</h3>
+            <p>جدول الري وتتبع حالة التربة بلمسة واحدة، واحصل على حلول و توصيات فورية</p>
+        </div>
+        <div>
+            <img src="C:\Users\Raghad\OneDrive\Desktop\bamboo\images\18.png" alt="الري التلقائي">
+            <h3>الري التلقائي</h3>
+            <p>رشاشات ري ذاتية لتقليل هدر المياه وضمان سقي النباتات في الوقت المناسب</p>
+        </div>
+        <div>
+            <img src="C:\Users\Raghad\OneDrive\Desktop\bamboo\images\20.png" alt="تحليل التربة">
+            <h3>تحليل التربة</h3>
+            <p>حساسات ذكية لتحليل خصائص التربة مثل نسبة الرطوبة والمعادن ودرجة قلوية التربة</p>
+        </div>
+    </div>
+</section>
+
+<section id="story">
+    <h2>ما هي قصتنا؟</h2>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zA5aGNFKv7c" title="فيديو قصتنا" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section class="coming-soon" id="contact">
+    <h2>!انضم الينا</h2>
+    <p>انضم الى نشرتنا البريدية وكن من أوائل الأشخاص الذين سيجربون بامبو </p>
+    <form action="#" method="post" class="email-form">
+        <input type="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+        <input type="submit" value="سجل الآن">
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 بامبو. جميع الحقوق محفوظة.</p>
+    <div class="social-icons">
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        
+    </div>
+</footer>
+
+
+
+</body>
+</html>
